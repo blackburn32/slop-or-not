@@ -1,0 +1,7 @@
+---
+globs: *.vue,*.ts
+alwaysApply: false
+---
+This project uses Nuxt 3, Tailwind CSS and Nuxt UI Pro.
+
+Pages should be minimal. Use components to break up the modules of each page.

@@ -1,0 +1,6 @@
+---
+alwaysApply: true
+---
+This project is called Slop or Not. It is a game where users are presented an array of content, and they must predict which pieces of the content are AI generated versus human generated.
+
+The site is also informational, spelling out for users how they can detect AI generated content so they can be prepared for a world increasingly full of AI slop.
