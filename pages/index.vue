@@ -15,4 +15,12 @@ const links = ref([
     trailingIcon: 'i-lucide-arrow-right'
   }
 ])
+
+useSeoMeta({
+  title: 'Slop or Not?',
+  description: 'Can you tell slop from not? Test your skills detecting AI generated slop.',
+  ogTitle: 'Slop or Not?',
+  ogDescription: 'Can you tell slop from not? Test your skills detecting AI generated slop.',
+  titleTemplate: `%s`,
+})
 </script>
