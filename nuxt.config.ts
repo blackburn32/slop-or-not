@@ -6,6 +6,22 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
 
+  app: {
+    pageTransition: {
+      name: 'slide-up',
+      mode: 'out-in',
+      enterActiveClass: 'transition-all duration-400 ease-out',
+      enterFromClass: 'transform translate-y-full',
+      enterToClass: 'transform translate-y-0',
+      leaveActiveClass: 'transition-all duration-0 ease-in',
+      leaveFromClass: 'transform translate-y-0',
+      leaveToClass: 'transform translate-y-full',
+    },
+    rootAttrs: {
+      class: 'overflow-hidden'
+    }
+  },
+
   site: {
     name: 'Slop or Not?',
     url: 'https://slop-or-not.info',

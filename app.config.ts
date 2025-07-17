@@ -1,9 +1,12 @@
 export default defineAppConfig({
     ui: {
       colors: {
-        primary: 'green',
-        neutral: 'slate'
-      }
+        primary: 'acapulco',
+        secondary: 'atomic-tangerine',
+        neutral: 'loulou',
+        success: 'las-palmas',
+        error: 'vermilion',
+      },
     },
     uiPro: {
       footer: {

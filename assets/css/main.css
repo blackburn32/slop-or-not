@@ -3,5 +3,101 @@
 
 @plugin "@tailwindcss/typography";
 
-@source "../../../content/**/*";
+@theme static {
 
+
+    --font-title: 'Barrio', sans-serif;
+    --font-sans: 'Fredoka', sans-serif;
+    --font-button: 'Barlow', sans-serif;
+
+    /* Primary */
+    --color-acapulco-50: #f4f9f7;
+    --color-acapulco-100: #daede7;
+    --color-acapulco-200: #b4dbcf;
+    --color-acapulco-300: #7dbdab;
+    --color-acapulco-400: #5da492;
+    --color-acapulco-500: #438978;
+    --color-acapulco-600: #346d61;
+    --color-acapulco-700: #2d5850;
+    --color-acapulco-800: #274842;
+    --color-acapulco-900: #243d38;
+    --color-acapulco-950: #102320;
+    
+    /* Secondary */
+    --color-atomic-tangerine-50: #fff4ed;
+    --color-atomic-tangerine-100: #ffe5d4;
+    --color-atomic-tangerine-200: #ffc8a9;
+    --color-atomic-tangerine-300: #ff9864;
+    --color-atomic-tangerine-400: #fe6f39;
+    --color-atomic-tangerine-500: #fc4913;
+    --color-atomic-tangerine-600: #ed2f09;
+    --color-atomic-tangerine-700: #c51f09;
+    --color-atomic-tangerine-800: #9c1a10;
+    --color-atomic-tangerine-900: #7e1910;
+    --color-atomic-tangerine-950: #440906;
+
+    /* Neutral */
+    --color-loulou-50: #fcf7fc;
+    --color-loulou-100: #f9eef8;
+    --color-loulou-200: #f3dbf2;
+    --color-loulou-300: #e8bfe4;
+    --color-loulou-400: #da98d3;
+    --color-loulou-500: #c570bc;
+    --color-loulou-600: #a8519c;
+    --color-loulou-700: #8b4080;
+    --color-loulou-800: #541F4A;
+    --color-loulou-900: #461A3E;
+    --color-loulou-950: #2E1129;
+
+    /* Success */
+    --color-las-palmas-50: #ffffe6;
+    --color-las-palmas-100: #fbffc8;
+    --color-las-palmas-200: #f6fe98;
+    --color-las-palmas-300: #e9fa5c;
+    --color-las-palmas-400: #d9f02b;
+    --color-las-palmas-500: #c7e40c;
+    --color-las-palmas-600: #93ac04;
+    --color-las-palmas-700: #6e8209;
+    --color-las-palmas-800: #586508;
+    --color-las-palmas-900: #495710;
+    --color-las-palmas-950: #263003;
+
+    /* Error */
+    --color-vermilion-50: #fff6ec;
+    --color-vermilion-100: #ffebd3;
+    --color-vermilion-200: #ffd2a7;
+    --color-vermilion-300: #ffb36e;
+    --color-vermilion-400: #ff8734;
+    --color-vermilion-500: #ff650d;
+    --color-vermilion-600: #f74a03;
+    --color-vermilion-700: #c93405;
+    --color-vermilion-800: #a0290c;
+    --color-vermilion-900: #80250e;
+    --color-vermilion-950: #451005;
+}
+
+:root {
+    --ui-bg: var(--color-loulou-950);
+    --ui-bg-inverted: var(--color-loulou-950);
+
+    --ui-primary: var(--color-acapulco-300);
+    --ui-secondary: var(--color-atomic-tangerine-300);
+    --ui-tertiary: var(--color-loulou-800);
+    --ui-success: var(--color-las-palmas-500);
+    --ui-error: var(--color-vermilion-600);
+
+    --ui-text: var(--color-loulou-50);
+    --ui-text-inverted: var(--color-loulou-950);
+
+    --ui-text-success: var(--color-las-palmas-800);
+
+    --ui-radius: 0;
+}
+
+.prose {
+    --tw-prose-headings: var(--color-loulou-900);
+    --tw-prose-body: var(--color-loulou-900);
+    --tw-prose-links: var(--color-loulou-900);
+}
+
+@source "../../../content/**/*";
