@@ -1,7 +1,7 @@
 <template>
     <div class="relative flex flex-col h-screen w-screen overflow-hidden">
         <!-- Main Content Area -->
-        <div class="flex-1 flex items-center justify-center">
+        <div class="flex-1 flex items-center justify-center px-[24px]">
             <Transition name="fade" mode="out-in">
                 <QuizIntro v-if="showIntro" key="intro" />
                 <QuizImages
@@ -17,13 +17,15 @@
         </div>
         
         <!-- Footer Area -->
-        <div v-if="!showIntro" class="max-h-16">
-            <QuizFooter 
-                :can-proceed="canProceed" 
-                :results="results"
-                @next="handleNext"
-            />
-        </div>
+        <Transition name="slide-up">
+            <div v-if="!showIntro" class="max-h-16">
+                <QuizFooter
+                    :can-proceed="canProceed"
+                    :results="results"
+                    @next="handleNext"
+                />
+            </div>
+        </Transition>
     </div>
 </template>
 
@@ -112,5 +114,15 @@ onMounted(() => {
 
 .fade-enter-active {
     transition-delay: 0.1s;
+}
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide-up-enter-from,
+.slide-up-leave-to {
+    transform: translateY(100%);
 }
 </style>

@@ -6,7 +6,7 @@
         </h1>
         
         <!-- Images Container -->
-        <div class="flex flex-col lg:flex-row gap-6 max-w-4xl w-full">
+        <div class="flex flex-col lg:flex-row gap-6 max-w-4xl w-full min-h-[320px]">
             <QuizImage
                 v-for="image in shuffledImages"
                 :key="image"
