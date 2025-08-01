@@ -18,7 +18,7 @@
         
         <!-- Footer Area -->
         <Transition name="slide-up">
-            <div v-if="!showIntro" class="max-h-16">
+            <div v-if="showFooter" class="max-h-16">
                 <QuizFooter
                     :can-proceed="canProceed"
                     :results="results"
@@ -32,6 +32,7 @@
 <script setup lang="ts">
 
 import type { QuizQuestion, QuizResults } from '~/types/QuizResults'
+import { generateQuestions } from '~/utils/QuizGenerator'
 
 const showIntro = ref(true)
 const showResults = ref(false)
@@ -40,19 +41,7 @@ const currentQuestionIndex = ref(0)
 const quizCompleted = ref(false)
 const results = ref<QuizResults>({ questions: [] })
 
-// Mock question data
-const questions = ref<QuizQuestion[]>([
-    { id: 1, realImage: '/real/1.jpg', slopImage: '/slop/1.jpg' },
-    { id: 2, realImage: '/real/2.jpg', slopImage: '/slop/2.jpg' },
-    { id: 3, realImage: '/real/3.jpg', slopImage: '/slop/3.jpg' },
-    { id: 4, realImage: '/real/4.jpg', slopImage: '/slop/4.jpg' },
-    { id: 5, realImage: '/real/5.jpg', slopImage: '/slop/5.jpg' },
-    { id: 6, realImage: '/real/6.jpg', slopImage: '/slop/6.jpg' },
-    { id: 7, realImage: '/real/7.jpg', slopImage: '/slop/7.jpg' },
-    { id: 8, realImage: '/real/8.jpg', slopImage: '/slop/8.jpg' },
-    { id: 9, realImage: '/real/9.jpg', slopImage: '/slop/9.jpg' },
-    { id: 10, realImage: '/real/10.jpg', slopImage: '/slop/10.jpg' },
-])
+const questions = ref<QuizQuestion[]>(generateQuestions())
 
 const currentQuestion = computed(() => questions.value[currentQuestionIndex.value])
 const canProceed = computed(() => selectedImage.value !== null)
@@ -78,7 +67,7 @@ const handleNext = () => {
         // Auto-advance to next question after showing results
         setTimeout(() => {
             moveToNextQuestion()
-        }, 2000)
+        }, 1500)
     }
 }
 
@@ -90,13 +79,22 @@ const moveToNextQuestion = () => {
     } else {
         // Quiz complete - you can add completion logic here
         quizCompleted.value = true
+        showFooter.value = false
     }
+}
+
+const showFooter = ref(false)
+const showFooterAfterTimeout = () => {
+    setTimeout(() => {
+        showFooter.value = true
+    }, 240)
 }
 
 onMounted(() => {
     // Wait 2 seconds then fade out intro
     setTimeout(() => {
         showIntro.value = false
+        showFooterAfterTimeout()
     }, 2000)
 })
 </script>
@@ -118,7 +116,7 @@ onMounted(() => {
 
 .slide-up-enter-active,
 .slide-up-leave-active {
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out 0.1s;
 }
 
 .slide-up-enter-from,

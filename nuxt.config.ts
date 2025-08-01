@@ -40,6 +40,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/ui-pro',
     '@nuxtjs/seo',
+    'nuxt-particles',
   ],
 
   css: ['~/assets/css/main.css'],
@@ -69,5 +70,10 @@ export default defineNuxtConfig({
         'https://github.com/blackburn32/slop-or-not',
       ]
     })
+  },
+
+  particles: {
+    mode: 'slim',
+    lazy: true,
   }
 })

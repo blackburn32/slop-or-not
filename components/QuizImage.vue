@@ -2,7 +2,7 @@
     <Transition name="slide-in" appear>
         <div 
             v-show="isVisible"
-            class="image-container relative cursor-pointer transition-all duration-300 w-full"
+            class="image-container relative cursor-pointer transition-all hover:scale-105 duration-300 w-full"
             :class="{ 'cursor-default': !!textBadge }"
             @click="handleClick"
         >
@@ -10,12 +10,12 @@
                 v-if="imageUrl"
                 :src="imageUrl" 
                 :alt="'Quiz Image'"
-                class="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg"
+                class="w-full h-64 md:h-80 object-cover rounded-lg shadow-lgtransition-all duration-300"
                 :class="{ 'border-2 border-secondary': selected }"
             >
             <USkeleton 
                 v-else
-                class="w-full h-64 md:h-80 rounded-lg shadow-lg bg-primary hover:scale-105 transition-all duration-300"
+                class="w-full h-64 md:h-80 rounded-lg shadow-lg bg-primary transition-all duration-300"
                 :class="{ 
                     'border-2 border-secondary': selected,
                     'hover:scale-100': !!textBadge,

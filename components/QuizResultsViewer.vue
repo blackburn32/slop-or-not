@@ -1,7 +1,7 @@
 <template>
-    <div class="flex flex-col items-center justify-center h-full w-full">
-        <div class="text-2xl font-title">You're {{ title }}</div>
-        <div>You scored {{ scoreText }}. {{ description }}</div>
+    <div class="flex flex-col items-center justify-center h-full w-full md:max-w-md">
+        <div class="text-4xl font-title text-secondary">You're {{ title }}</div>
+        <div class="text-secondary">You scored {{ scoreText }}. {{ description }}</div>
         <div class="flex flex-row gap-4 mt-4">
             <UButton to="/tips">Learn the tricks</UButton>
             <UButton variant="ghost" @click="resetQuiz">Try Again</UButton>
