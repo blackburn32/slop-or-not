@@ -20,9 +20,7 @@
         <Transition name="slide-up">
             <div v-if="showFooter" class="max-h-16">
                 <QuizFooter
-                    :can-proceed="canProceed"
                     :results="results"
-                    @next="handleNext"
                 />
             </div>
         </Transition>
@@ -44,14 +42,11 @@ const results = ref<QuizResults>({ questions: [] })
 const questions = ref<QuizQuestion[]>(generateQuestions())
 
 const currentQuestion = computed(() => questions.value[currentQuestionIndex.value])
-const canProceed = computed(() => selectedImage.value !== null)
 
 const handleImageSelection = (imageId: string) => {
     if (showResults.value) return
     selectedImage.value = imageId
-}
-
-const handleNext = () => {
+    
     if (!selectedImage.value || !currentQuestion.value) return
     
     // Show results first
@@ -94,6 +89,7 @@ onMounted(() => {
     // Wait 2 seconds then fade out intro
     setTimeout(() => {
         showIntro.value = false
+        quizCompleted.value = false
         showFooterAfterTimeout()
     }, 2000)
 })
