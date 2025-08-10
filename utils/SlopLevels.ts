@@ -28,7 +28,7 @@ const slopLevels: SlopLevel[] = [
         name: 'Sir Slops-a-Lot',
         description: 'Congratulations! You\'ve been knighted for your slop-slaying skills. Sharpen your skills and challenge yourself again.',
         score: 60,
-        image: '/sirSlopsAlot.svg'
+        image: '/sirSlopsALot.svg'
     },
     {
         name: 'A Bit Slop-y',
@@ -40,7 +40,7 @@ const slopLevels: SlopLevel[] = [
         name: 'Slop Curious',
         description: 'It\'s going to take more than a little curiosity to spot slop. Check out our slop-spotting guide, then try again!',
         score: 20,
-        image: '/slop.svg'
+        image: '/slopCurious.svg'
     },
 ]   
 
